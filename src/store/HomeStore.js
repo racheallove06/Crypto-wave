@@ -6,6 +6,8 @@ const HomeStore = create((set) => ({
   fetchedCoins: [],
   //another piece of state query which is = to the value typed to on the input
   query: "",
+  //created another state to rebert back to the trending coins
+  tending: [],
   //function to update the state
   setQuery: (e) => {
     set({ query: e.target.value });
@@ -15,21 +17,25 @@ const HomeStore = create((set) => ({
   //function to get the coins entered in the input from the api
 
   searchCoins: debounce(async () => {
-    const { query } = HomeStore.getState();
-    const coins = await axios.get(
-      `https://api.coingecko.com/api/v3/search?query=${query}`
-    );
+    const { query, trending } = HomeStore.getState();
+    if (query.length > 2) {
+      const coins = await axios.get(
+        `https://api.coingecko.com/api/v3/search?query=${query}`
+      );
 
-    const fetchedCoins = coins.data.coins.map((coin) => {
-      return {
-        name: coin.name,
-        image: coin.large,
-        id: coin.id,
-        marketCupRank: coin.market_cup_rank,
-      };
-    });
-    ///set our fetched coinds
-    set({ fetchedCoins: fetchedCoins });
+      const fetchedCoins = coins.data.coins.map((coin) => {
+        return {
+          name: coin.name,
+          image: coin.large,
+          id: coin.id,
+          marketCupRank: coin.market_cup_rank,
+        };
+      });
+      ///set our fetched coinds
+      set({ fetchedCoins: fetchedCoins });
+    } else {
+      set({ fetchedCoins: trending });
+    }
   }, 500),
 
   ///created a function to only get the data i want from the query
@@ -51,7 +57,7 @@ const HomeStore = create((set) => ({
     });
 
     //setting the array i got on state
-    set({ fetchedCoins: fetchedCoins });
+    set({ fetchedCoins, trending: fetchedCoins });
   },
 }));
 
