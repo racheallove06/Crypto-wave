@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import HomeStore from "../store/HomeStore";
+import HomeStore from "../stores/HomeStore";
 import { Link } from "react-router-dom";
 const Home = () => {
   const store = HomeStore();
