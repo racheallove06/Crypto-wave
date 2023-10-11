@@ -19,8 +19,20 @@ const HomeStore = create((set) => ({
     const coins = await axios.get(
       `https://api.coingecko.com/api/v3/search?query=${query}`
     );
-    console.log(coins.data.coins);
+
+    const fetchedCoins = coins.data.coins.map((coin) => {
+      return {
+        name: coin.name,
+        image: coin.large,
+        id: coin.id,
+        marketCupRank: coin.market_cup_rank,
+      };
+    });
+    ///set our fetched coinds
+    set({ fetchedCoins: fetchedCoins });
   }, 500),
+
+  ///created a function to only get the data i want from the query
 
   fetchCoins: async () => {
     const coins = await axios.get(
