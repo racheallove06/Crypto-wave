@@ -9,9 +9,8 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <input type="text" />
+      <input type="text" value={store.query} onChange={store.setQuery} />
       {/*rendering the coins on screen BY MAPPING OVER THE ARRAY*/}
-
       {store.fetchedCoins.map((coin) => {
         return (
           <div key={coin.id}>
