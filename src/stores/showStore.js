@@ -1,9 +1,9 @@
 import { create } from "zustand";
 
-const showStore = create((set) => ({
+const ShowStore = create((set) => ({
   fetchData: () => {
     console.log("heyy");
   },
 }));
 
-export default showStore;
+export default ShowStore;
