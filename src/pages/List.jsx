@@ -64,7 +64,7 @@ const List = () => {
   return (
     <div>
       <header>
-        <img src={store.displayImage} />
+        <img src={store.displayImage} alt="/" width="64" />
         <h2>
           {store.displayData} ({store.displaySymb})
         </h2>
