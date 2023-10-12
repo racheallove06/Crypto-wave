@@ -31,7 +31,6 @@ const listStore = create((set) => ({
     const displayData = dataRes.data.name;
     const displayImage = dataRes.data.image.large;
     const displaySymb = dataRes.data.symbol;
-    console.log(dataRes);
     set({ graphData });
     set({ displayData });
     set({ displayImage });

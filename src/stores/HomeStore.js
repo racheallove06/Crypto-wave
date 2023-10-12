@@ -41,20 +41,27 @@ const HomeStore = create((set) => ({
   ///created a function to only get the data i want from the query
 
   fetchCoins: async () => {
-    const coins = await axios.get(
-      "https://api.coingecko.com/api/v3/search/trending"
-    );
+    const [coins, btcRes] = await Promise.all([
+      axios.get("https://api.coingecko.com/api/v3/search/trending"),
+      axios.get(
+        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+      ),
+    ]);
+
+    ///getting the price
+    const getBtc = btcRes.data.bitcoin.usd;
 
     //craeting an object with the array that i want
-
     const fetchedCoins = coins.data.coins.map((coin) => {
       return {
         id: coin.item.coin_id,
         image: coin.item.large,
         name: coin.item.name,
-        price: coin.item.price_btc,
+        price: coin.item.price_btc.toFixed(9),
+        priceUsd: (coin.item.price_btc * getBtc).toFixed(9),
       };
     });
+    console.log(fetchedCoins);
 
     //setting the array i got on state
     set({ fetchedCoins, trending: fetchedCoins });
