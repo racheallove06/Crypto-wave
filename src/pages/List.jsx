@@ -63,6 +63,12 @@ const List = () => {
   }, [store, params]);
   return (
     <div>
+      <header>
+        <img src={store.displayImage} />
+        <h2>
+          {store.displayData} ({store.displaySymb})
+        </h2>
+      </header>
       <AreaChart
         width={500}
         height={400}
