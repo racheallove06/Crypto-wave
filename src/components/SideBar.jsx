@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { FcCurrencyExchange } from "react-icons/fc";
 import { FaBars } from "react-icons/fa6";
-import List from "../pages/List";
-import Home from "../pages/Home";
-import Trending from "../pages/Trending";
-import Exchanges from "../pages/Exchanges";
+import { FaRegTimesCircle } from "react-icons/fa";
 import logo from "./cryptocurrency.png";
 import "../index.css";
-import Cryptos from "../pages/Cryptos";
 import { NavLink } from "react-router-dom";
+import { useStateContext } from "../contexts/ContextProvider";
 import { Avatar } from "antd";
 const SideBar = ({ children }) => {
   const menuItem = [
@@ -34,6 +31,14 @@ const SideBar = ({ children }) => {
       icon: <FcCurrencyExchange />,
     },
   ];
+  const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+
+  const handleCloseSidebar = () => {
+    if (activeMenu && screenSize <= 900) {
+      setActiveMenu(false);
+    }
+  };
+
   return (
     <div className="container">
       <div className="sidebar">
@@ -45,7 +50,7 @@ const SideBar = ({ children }) => {
           </h1>{" "}
           <div className="bars">
             {" "}
-            <FaBars />{" "}
+            <FaRegTimesCircle />{" "}
           </div>
         </div>
         {menuItem.map((item, index) => (

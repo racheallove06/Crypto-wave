@@ -48,8 +48,7 @@ main {
   font-size: 64px;
 }
 .bars {
-  font-size: 25px;
-  margin-left: 30px;
+  display: none;
 }
 
 .link {
@@ -71,6 +70,7 @@ main {
 .icon {
   margin-right: 18px;
   font-size: 53px;
+  display: none;
 }
 .link-text {
   font-size: 24px;
@@ -159,5 +159,33 @@ input {
 
   input {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .sidebar {
+    position: absolute;
+    flex-direction: column;
+    justify-content: start;
+    top: 0px;
+    width: 50%;
+    height: 200vh;
+    transition: 0.4s;
+    z-index: 2;
+    border-left: 1px solid #40a798;
+  }
+  .link-text {
+    transition: all 0.5s;
+    width: 100%;
+    margin-left: -10px;
+  }
+
+  .icon {
+    display: none;
+  }
+  .bars {
+    display: flex;
+    font-size: 25px;
+    margin-left: 50px;
   }
 }
