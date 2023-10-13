@@ -1,61 +1,45 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { FiSettings } from "react-icons/fi";
+import React from "react";
+import { Routes, BrowserRouter, Route, Link } from "react-router-dom";
+import { Layout, Typography, Space } from "antd";
 
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
+import SideBar from "./components/SideBar";
+import Home from "./pages/Home";
+import List from "./pages/List";
 import "./App.css";
 
-import { Navbar, Footer, SideBar } from "./components";
-
-import { Home, List } from "./pages";
-
-export default function App() {
-  return (
-    <div className={currentMode === "Dark" ? "dark" : ""}>
-      <div className="App">
-        <BrowserRouter>
-          <div className="flex relative dark:bg-main-dark-bg">
-            <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-              {" "}
-              <TooltipComponent content="Setting" position="Top">
-                {" "}
-              </TooltipComponent>{" "}
-            </div>
-            {activeMenu ? (
-              <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
-                <SideBar />{" "}
-              </div>
-            ) : (
-              <div className="w-0  dark:bg-secondary-dark-bg bg-white ">
-                <SideBar />{" "}
-              </div>
-            )}
-
-            <div
-              className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${
-                activeMenu ? `md:ml-72` : `flex-2`
-              }
-`}
-            >
-              <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-                <Navbar />
-              </div>{" "}
-              <div>
-                {themeSetting && <ThemeSettings />}
-
-                <Routes>
-                  {/*Dashboard*/}
-                  <Route path="/" element={<Home />} />
-                  <Route path="/home" element={<Home />} />
-
-                  {/*Pages */}
-                  <Route path="/:coin" element={<List />} />
-                </Routes>
-              </div>
-            </div>
-          </div>
-        </BrowserRouter>{" "}
+const App = () => (
+  <div className="app">
+    <BrowserRouter>
+      <div className="navbar">
+        <SideBar />
       </div>
-    </div>
-  );
-}
+      <div className="main">
+        <Layout>
+          <div className="routes">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+
+              <Route exact path="/List" element={<List />} />
+            </Routes>
+          </div>
+        </Layout>
+        <div className="footer">
+          <Typography.Title
+            level={5}
+            style={{ color: "white", textAlign: "center" }}
+          >
+            Copyright © 2021
+            <Link to="/">Cryptoverse Inc.</Link> <br />
+            All Rights Reserved.
+          </Typography.Title>
+          <Space>
+            <Link to="/">Home</Link>
+            <Link to="/List">List</Link>
+          </Space>
+        </div>
+      </div>
+    </BrowserRouter>
+  </div>
+);
+
+export default App;
