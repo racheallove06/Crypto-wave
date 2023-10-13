@@ -59,14 +59,14 @@ const List = () => {
   const params = useParams();
   ///get id of the coin using react router
   React.useEffect(() => {
-    store.fetchData(params.coin);
+    store.fetchData(params.id);
   }, [store, params]);
   return (
     <div>
       <header>
         <img src={store.displayImage} alt="/" width="64" />
         <h2>
-          {store.displayData} ({store.displaySymb})
+          {store.displayData} ({store.displaySymb} )
         </h2>
       </header>
       <AreaChart
@@ -81,7 +81,7 @@ const List = () => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="Date" />
+        <XAxis dataKey="Date" />7
         <YAxis />
         <Tooltip />
         <Area type="monotone" dataKey="Price" stroke="#8884d8" fill="#8884d8" />

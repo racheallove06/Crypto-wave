@@ -51,9 +51,6 @@ const SideBar = () => {
           <Menu.Item icon={<HomeOutlined />}>
             <Link to="/">Home</Link>
           </Menu.Item>
-          <Menu.Item icon={<FundOutlined />}>
-            <Link to="/List">List</Link>
-          </Menu.Item>
         </Menu>
       )}
     </div>
