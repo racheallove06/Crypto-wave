@@ -1,7 +1,68 @@
 import React from "react";
+import { FcCurrencyExchange } from "react-icons/fc";
+import { FaBars } from "react-icons/fa6";
+import List from "../pages/List";
+import Home from "../pages/Home";
+import Trending from "../pages/Trending";
+import Exchanges from "../pages/Exchanges";
+import logo from "./cryptocurrency.png";
+import "../index.css";
+import Cryptos from "../pages/Cryptos";
+import { NavLink } from "react-router-dom";
+import { Avatar } from "antd";
+const SideBar = ({ children }) => {
+  const menuItem = [
+    {
+      path: "/Cryptos",
+      name: "Cryptos",
+      icon: <FcCurrencyExchange />,
+    },
+    {
+      path: "/Exchanges",
+      name: "Exchanges",
+      icon: <FcCurrencyExchange />,
+    },
 
-const SideBar = () => {
-  return <div>SideBar</div>;
+    {
+      path: "/Trending",
+      name: "Trending",
+      icon: <FcCurrencyExchange />,
+    },
+    {
+      path: "/",
+      name: "Home",
+      icon: <FcCurrencyExchange />,
+    },
+  ];
+  return (
+    <div className="container">
+      <div className="sidebar">
+        <div className="top-section">
+          {" "}
+          <h1 className="logo">
+            {" "}
+            <Avatar src={logo} size="large" />
+          </h1>{" "}
+          <div className="bars">
+            {" "}
+            <FaBars />{" "}
+          </div>
+        </div>
+        {menuItem.map((item, index) => (
+          <NavLink
+            to={item.path}
+            key={index}
+            className="link"
+            activeClassName="active"
+          >
+            <div className="icon"> {item.icon} </div>{" "}
+            <div className="link-text">{item.name} </div>
+          </NavLink>
+        ))}
+      </div>
+      <main>{children}</main>
+    </div>
+  );
 };
 
 export default SideBar;

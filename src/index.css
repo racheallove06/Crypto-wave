@@ -12,7 +12,7 @@
 * {
   margin: 0 auto;
   padding: 0;
-  box-sizing: border-box;
+  text-decoration: none;
 }
 
 ul {
@@ -24,11 +24,57 @@ a {
 }
 
 .container {
-  max-width: 1240px;
-
-  margin: auto;
+  display: flex;
 }
 
+main {
+  width: 100%;
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+.sidebar {
+  background-color: #40a798;
+  height: 100vh;
+  width: 50vh;
+}
+
+.top-section {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+}
+.logo {
+  font-size: 64px;
+}
+.bars {
+  font-size: 25px;
+  margin-left: 30px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  transition: all 0.5s;
+}
+
+.link:hover {
+  background: #fafafa;
+  color: black;
+}
+
+.active {
+  background-color: #fafafa;
+}
+.icon {
+  margin-right: 18px;
+  font-size: 53px;
+}
+.link-text {
+  font-size: 24px;
+}
 body {
   margin: 0;
   font-family: "Hina Mincho" "Arima" "Charm" "Nunito" "Rancho" "Segoe UI",
@@ -46,6 +92,7 @@ code {
 h1 {
   font-size: 3.5rem;
   line-height: 1.2;
+  color: black;
 }
 
 h2 {
