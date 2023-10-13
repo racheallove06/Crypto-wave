@@ -1,8 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Arima:wght@100;200;300&family=Charm&family=Hina+Mincho&family=Nunito:ital,wght@0,200;1,200;1,400&family=Rancho&display=swap");
 
 :root {
-  --background-color: #fafafa;
+  --background-color: red;
   --primary-color: #40a798;
+}
+body {
+  margin: 0;
+  font-family: "Hina Mincho" "Arima" "Charm" "Nunito" "Rancho" "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 .primary {
@@ -10,8 +23,6 @@
 }
 
 * {
-  margin: 0 auto;
-  padding: 0;
   text-decoration: none;
 }
 
@@ -23,14 +34,12 @@ a {
   color: #476268;
 }
 
-.container {
-  display: flex;
+.media-logo {
+  display: none;
 }
 
-main {
-  width: 100%;
-  padding: 20px;
-  background-color: #fafafa;
+.container {
+  display: flex;
 }
 
 .sidebar {
@@ -74,19 +83,6 @@ main {
 }
 .link-text {
   font-size: 24px;
-}
-body {
-  margin: 0;
-  font-family: "Hina Mincho" "Arima" "Charm" "Nunito" "Rancho" "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 h1 {
@@ -156,10 +152,6 @@ input {
     width: 100%;
     margin: 1rem 0;
   }
-
-  input {
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 450px) {
@@ -169,6 +161,7 @@ input {
     justify-content: start;
     top: 0px;
     width: 50%;
+    left: -100%;
     height: 200vh;
     transition: 0.4s;
     z-index: 2;
@@ -183,9 +176,43 @@ input {
   .icon {
     display: none;
   }
+  .media-navbar {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid red;
+    height: 10vh;
+  }
   .bars {
     display: flex;
-    font-size: 25px;
-    margin-left: 50px;
+    position: absolute;
+    right: 0;
+  }
+  .media-logo {
+    display: flex;
+  }
+
+  .container {
+    max-width: 1240px;
+    display: block;
+    height: 200vh;
+  }
+  main {
+  }
+  .navbar-container {
+    border-bottom: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .nav li {
+  }
+  .nav-logo {
+    position: absolute;
+    left: 0;
+    font-size: 66px;
   }
 }

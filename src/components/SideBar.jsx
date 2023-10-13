@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FcCurrencyExchange } from "react-icons/fc";
 import { FaBars } from "react-icons/fa6";
-import { FaRegTimesCircle } from "react-icons/fa";
 import logo from "./cryptocurrency.png";
 import "../index.css";
 import { NavLink } from "react-router-dom";
@@ -50,7 +49,7 @@ const SideBar = ({ children }) => {
           </h1>{" "}
           <div className="bars">
             {" "}
-            <FaRegTimesCircle />{" "}
+            <FaBars />{" "}
           </div>
         </div>
         {menuItem.map((item, index) => (

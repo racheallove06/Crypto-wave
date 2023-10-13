@@ -1,19 +1,16 @@
 import React from "react";
-import { FaBars } from "react-icons/fa6";
-import "./Navbar.css";
+import { TbMenu2 } from "react-icons/tb";
 const Navbar = () => {
   return (
-    <div className="header">
-      <div className="container">
-        {" "}
-        <h1>Logo</h1>{" "}
-        <ul className="nave-menu">
-          {" "}
+    <div className="navbar-container">
+      <div className="nav-content">
+        <ul className="nav">
+          <li>Crypto</li>
           <li>
             {" "}
-            <FaBars />
+            <TbMenu2 />
           </li>
-        </ul>{" "}
+        </ul>
       </div>
     </div>
   );
