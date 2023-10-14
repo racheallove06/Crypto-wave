@@ -77,6 +77,9 @@ input {
 }
 /*end of globals*/
 /*SIde bar */
+.side-container {
+  display: flex;
+}
 .sidebar {
   background-color: #40a798;
   height: 100vh;
@@ -114,6 +117,10 @@ input {
 }
 .link-text {
   font-size: 24px;
+}
+main {
+  background-color: white;
+  width: 100%;
 }
 /*end of sidebar*/
 
@@ -168,6 +175,38 @@ input {
   font-size: 1.2rem;
 }
 
+/*Hero section*/
+
+.hero .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 4rem auto;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.hero .left {
+  padding: 1rem;
+}
+.hero h1 {
+  padding: 1rem 0;
+}
+.hero .input-container {
+  padding: 1rem 0;
+}
+
+.hero .right {
+  padding: 1rem;
+}
+.hero .img-container {
+  width: 100%;
+  display: flex;
+}
+.hero img {
+  max-width: 80%;
+  margin: auto;
+}
 @media screen and (max-width: 789px) {
   h1 {
     font-size: 2.1rem;

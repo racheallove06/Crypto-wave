@@ -39,7 +39,7 @@ const SideBar = ({ children }) => {
   };
 
   return (
-    <div className="container">
+    <div className="side-container">
       <div className="sidebar">
         <div className="top-section">
           {" "}
@@ -64,7 +64,7 @@ const SideBar = ({ children }) => {
             <div className="link-text">{item.name} </div>
           </NavLink>
         ))}
-      </div>
+      </div>{" "}
       <main>{children}</main>
     </div>
   );
