@@ -299,6 +299,93 @@ main {
   margin-bottom: 50px;
 }
 
+/*Sign-up Page*/
+.signup .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+.signup .left {
+  text-align: center;
+}
+
+.signup img {
+  width: 300px;
+}
+
+.signup img:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease-in-out;
+}
+
+.signup .right p {
+  margin: 2rem 0;
+}
+
+/*FOOTER*/
+.footer {
+  background-color: var(--background);
+  padding: 5rem 0;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+}
+
+.footer .container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.footer .col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .bar {
+  width: 30px;
+  border-bottom: 4px solid var(--primary);
+  margin: 1rem 0;
+  background-color: #ff0000;
+}
+
+.footer a {
+  font-size: 1rem;
+}
+
+.footer .icon {
+  color: #303030;
+  margin-right: 4px;
+}
+
+.footer h5 {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 940px) {
+  .footer .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer .col-1 {
+    display: none;
+  }
+
+  /* @media screen and (max-width:478px) {
+        .footer .container {
+            grid-template-columns: 1fr;
+        }
+    } */
+}
+
+@media screen and (max-width: 940px) {
+  .signup .container {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (max-width: 940px) {
   .featured .container {
     grid-template-columns: 1fr;

@@ -8,6 +8,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
 } from "recharts";
 import Navbar from "../components/Navbar";
 
@@ -65,29 +66,37 @@ const List = () => {
   return (
     <div>
       <Navbar />
-      <header>
+      <header className="list-header">
         <img src={store.displayImage} alt="/" width="64" />
         <h2>
           {store.displayData} ({store.displaySymb} )
         </h2>
       </header>
-      <AreaChart
-        width={500}
-        height={400}
-        data={store.graphData}
-        margin={{
-          top: 10,
-          right: 30,
-          left: 0,
-          bottom: 0,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="Date" />7
-        <YAxis />
-        <Tooltip />
-        <Area type="monotone" dataKey="Price" stroke="#8884d8" fill="#8884d8" />
-      </AreaChart>
+      <div className="list-graph">
+        {" "}
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart
+            data={store.graphData}
+            margin={{
+              top: 10,
+              right: 30,
+              left: 0,
+              bottom: 0,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="Date" />7
+            <YAxis />
+            <Tooltip />
+            <Area
+              type="monotone"
+              dataKey="Price"
+              stroke="#8884d8"
+              fill="#8884d8"
+            />
+          </AreaChart>
+        </ResponsiveContainer>{" "}
+      </div>
     </div>
   );
 };
