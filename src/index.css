@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Arima:wght@100;200;300&family=Charm&family=Hina+Mincho&family=Nunito:ital,wght@0,200;1,200;1,400&family=Rancho&display=swap");
 
 :root {
-  --background-color: red;
+  --background-color: #f1f1f1;
   --primary-color: #40a798;
 }
 body {
@@ -209,6 +209,66 @@ main {
   margin: auto;
 }
 
+/*featured part*/
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
+
+.featured {
+  width: 100%;
+  padding: 8rem 0;
+  background-color: var(--background-color);
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%);
+}
+
+.featured .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.featured .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.featured .left p {
+  margin: 1.5rem 0;
+}
+
+.featured .left btn {
+  align-self: flex-start;
+}
+
+.featured .right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.featured .right .card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 22px;
+  margin: 0.4rem;
+  width: 170px;
+  height: 170px;
+  border-radius: 24px;
+  border-radius: 1px solid #ddd;
+  box-shadow: rgb(0 0 0 /12%) 0px 8px 24px;
+  text-align: center;
+}
+
+.featured .right .card:hover {
+  box-shadow: rgb(0 0 0 /20%) 0px 8px 24px;
+}
 @media screen and (max-width: 950px) {
   .hero .container {
     grid-template-columns: 1fr;
