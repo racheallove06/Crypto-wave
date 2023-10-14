@@ -210,17 +210,11 @@ main {
 }
 
 /*featured part*/
-.green {
-  color: green;
-}
-.red {
-  color: red;
-}
 
 .featured {
   width: 100%;
   padding: 8rem 0;
-  background-color: var(--background-color);
+  background-color: var(--background);
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%);
 }
 
@@ -243,7 +237,7 @@ main {
   margin: 1.5rem 0;
 }
 
-.featured .left btn {
+.featured .left .btn {
   align-self: flex-start;
 }
 
@@ -258,17 +252,69 @@ main {
   flex-direction: column;
   padding: 12px 22px;
   margin: 0.4rem;
-  width: 170px;
-  height: 170px;
+  width: 190px;
+  height: 190px;
   border-radius: 24px;
-  border-radius: 1px solid #ddd;
-  box-shadow: rgb(0 0 0 /12%) 0px 8px 24px;
+  border: 1px solid #d3d3d3;
+  box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px;
   text-align: center;
 }
 
 .featured .right .card:hover {
-  box-shadow: rgb(0 0 0 /20%) 0px 8px 24px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
 }
+
+.featured .card .top {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured .right img {
+  width: 50px;
+  margin: auto;
+  padding: 0.2rem 0;
+}
+
+.featured .icon {
+  font-size: 36px;
+  margin: auto;
+  padding-top: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured span {
+  font-size: 22px;
+}
+
+.green {
+  color: var(--primary);
+}
+
+.red {
+  color: #ff0000;
+}
+
+.price {
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 940px) {
+  .featured .container {
+    grid-template-columns: 1fr;
+  }
+
+  .featured .left .btn {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .featured .container .right .card {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 950px) {
   .hero .container {
     grid-template-columns: 1fr;

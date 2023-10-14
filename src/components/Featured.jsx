@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlineArrowDown } from "react-icons/ai";
+import { HiArrowUp, HiArrowDown } from "react-icons/hi";
 import axios from "axios";
 
 const Featured = () => {
@@ -24,118 +24,150 @@ const Featured = () => {
   return (
     <div className="featured">
       <div className="container">
-        {/* Left Section */}
+        {/* Left */}
         <div className="left">
-          <h2>Explore bitcoin and currency</h2>
-          <p>See all currencies</p>
-          <button className="btn">Learn more</button>
+          <h2>Explore top Crypto's Like Bitcoin, Ethereum, and Dogecoin</h2>
+          <p>See all available assets: Cryptocurrencies and NFT's</p>
+          <button className="btn">See More Coins</button>
         </div>
 
-        {/* Right Section - First Card */}
+        {/* Right */}
+
         <div className="right">
-          {/* Card 1 */}
           <div className="card">
             <div className="top">
+              {/* <img src={BTC} alt='/' /> */}
               <img src={data[0].image} alt="" />
             </div>
-            <div>
-              <h2>{data[0].name}</h2>
-              <p>${data[0].current_price.toLocaleString()}</p>
+            <div className="price">
+              <h5>{data[0].name}</h5>
+              <p>
+                ${data[0].current_price.toLocaleString()}
+                {data[0].price_change_percentage_24h < 0 ? (
+                  <span className="red">
+                    <HiArrowDown className="icon" />
+                    {data[0].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                ) : (
+                  <span className="green">
+                    <HiArrowUp className="icon" />
+                    {data[0].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                )}{" "}
+              </p>
             </div>
-            {data[0].price_change_percentage_24h < 0 ? (
-              <span className="red">
-                {data[0].price_change_percentage_24h.toFixed(3)}%
-              </span>
-            ) : (
-              <span className="green">
-                <AiOutlineArrowDown />{" "}
-                {data[0].price_change_percentage_24h.toFixed(3)}%{" "}
-              </span>
-            )}
           </div>
-
           <div className="card">
             <div className="top">
               <img src={data[1].image} alt="" />
             </div>
             <div>
-              <h2>{data[2].name}</h2>
-              <p>${data[2].current_price.toLocaleString()}</p>
+              <h5>{data[1].name}</h5>
+              <p>
+                ${data[1].current_price.toLocaleString()}
+                {data[1].price_change_percentage_24h < 0 ? (
+                  <span className="red">
+                    <HiArrowDown className="icon" />
+                    {data[1].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                ) : (
+                  <span className="green">
+                    <HiArrowUp className="icon" />
+                    {data[1].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                )}
+              </p>
             </div>
-            {data[2].price_change_percentage_24h < 0 ? (
-              <span className="red">
-                {data[2].price_change_percentage_24h.toFixed(3)}%
-              </span>
-            ) : (
-              <span className="green">
-                <AiOutlineArrowDown />{" "}
-                {data[2].price_change_percentage_24h.toFixed(3)}%{" "}
-              </span>
-            )}
           </div>
-
+          <div className="card">
+            <div className="top">
+              <img src={data[2].image} alt="" />
+            </div>
+            <div>
+              <h5>{data[2].name}</h5>
+              <p>
+                ${data[2].current_price.toLocaleString()}
+                {data[2].price_change_percentage_24h < 0 ? (
+                  <span className="red">
+                    <HiArrowDown className="icon" />
+                    {data[2].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                ) : (
+                  <span className="green">
+                    <HiArrowUp className="icon" />
+                    {data[2].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                )}
+              </p>
+            </div>
+          </div>
           <div className="card">
             <div className="top">
               <img src={data[3].image} alt="" />
             </div>
             <div>
-              <h2>{data[3].name}</h2>
-              <p>${data[3].current_price.toLocaleString()}</p>
+              <h5>{data[3].name}</h5>
+              <p>
+                ${data[3].current_price.toLocaleString()}
+                {data[3].price_change_percentage_24h < 0 ? (
+                  <span className="red">
+                    <HiArrowDown className="icon" />
+                    {data[3].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                ) : (
+                  <span className="green">
+                    <HiArrowUp className="icon" />
+                    {data[3].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                )}
+              </p>
             </div>
-            {data[3].price_change_percentage_24h < 0 ? (
-              <span className="red">
-                {data[3].price_change_percentage_24h.toFixed(3)}%
-              </span>
-            ) : (
-              <span className="green">
-                <AiOutlineArrowDown />{" "}
-                {data[3].price_change_percentage_24h.toFixed(3)}%{" "}
-              </span>
-            )}
           </div>
-
           <div className="card">
             <div className="top">
               <img src={data[4].image} alt="" />
             </div>
             <div>
-              <h2>{data[4].name}</h2>
-              <p>${data[4].current_price.toLocaleString()}</p>
+              <h5>{data[4].name}</h5>
+              <p>
+                ${data[4].current_price.toLocaleString()}
+                {data[0].price_change_percentage_24h < 0 ? (
+                  <span className="red">
+                    <HiArrowDown className="icon" />
+                    {data[4].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                ) : (
+                  <span className="green">
+                    <HiArrowUp className="icon" />
+                    {data[4].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                )}
+              </p>
             </div>
-            {data[4].price_change_percentage_24h < 0 ? (
-              <span className="red">
-                {data[4].price_change_percentage_24h.toFixed(3)}%
-              </span>
-            ) : (
-              <span className="green">
-                <AiOutlineArrowDown />{" "}
-                {data[4].price_change_percentage_24h.toFixed(3)}%{" "}
-              </span>
-            )}
           </div>
-
           <div className="card">
             <div className="top">
               <img src={data[5].image} alt="" />
             </div>
             <div>
-              <h2>{data[5].name}</h2>
-              <p>${data[5].current_price.toLocaleString()}</p>
+              <h5>{data[5].name}</h5>
+              <p>
+                ${data[5].current_price.toLocaleString()}
+                {data[5].price_change_percentage_24h < 0 ? (
+                  <span className="red">
+                    <HiArrowDown className="icon" />
+                    {data[5].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                ) : (
+                  <span className="green">
+                    <HiArrowUp className="icon" />
+                    {data[5].price_change_percentage_24h.toFixed(2)}%
+                  </span>
+                )}
+              </p>
             </div>
-            {data[5].price_change_percentage_24h < 0 ? (
-              <span className="red">
-                {data[5].price_change_percentage_24h.toFixed(3)}%
-              </span>
-            ) : (
-              <span className="green">
-                <AiOutlineArrowDown />{" "}
-                {data[5].price_change_percentage_24h.toFixed(3)}%{" "}
-              </span>
-            )}
           </div>
         </div>
-
-        {/* Add more card sections here with similar structure */}
       </div>
     </div>
   );
