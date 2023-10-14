@@ -1,5 +1,5 @@
 import React from "react";
-
+import image from "./image.jpeg";
 const Hero = () => {
   return (
     <div className="hero">
@@ -11,6 +11,12 @@ const Hero = () => {
           <div className="input-container">
             <input type="email" placeholder="Enter Your Email" />
             <button className="btn">Learn More</button>
+          </div>
+        </div>
+        {/*Right side */}
+        <div className="right">
+          <div className="img-container">
+            <img src={image} alt="" width="300" />
           </div>
         </div>
       </div>

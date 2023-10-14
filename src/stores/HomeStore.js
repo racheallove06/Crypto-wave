@@ -61,7 +61,6 @@ const HomeStore = create((set) => ({
         priceUsd: (coin.item.price_btc * getBtc).toFixed(9),
       };
     });
-    console.log(fetchedCoins);
 
     //setting the array i got on state
     set({ fetchedCoins, trending: fetchedCoins });

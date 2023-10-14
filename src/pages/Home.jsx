@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import "../index.css";
+import Featured from "../components/Featured";
 
 const Home = () => {
   const store = HomeStore();
@@ -15,6 +16,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Hero />
+      <Featured />
     </div>
   );
 };
