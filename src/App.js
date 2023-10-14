@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Trending from "./pages/Trending";
 import Exchanges from "./pages/Exchanges";
 import Cryptos from "./pages/Cryptos";
-
+import Navbar from "./components/Navbar";
 const App = () => {
   return (
     <div>

@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+import Navbar from "../components/Navbar";
 
 const data = [
   {
@@ -63,6 +64,7 @@ const List = () => {
   }, [store, params]);
   return (
     <div>
+      <Navbar />
       <header>
         <img src={store.displayImage} alt="/" width="64" />
         <h2>

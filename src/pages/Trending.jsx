@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 const Trending = () => {
   return (
-    <div className="trending-container">
+    <div>
       <Navbar />
       <p>
         Never giving up is a testament to the resilience and determination that

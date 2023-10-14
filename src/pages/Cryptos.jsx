@@ -1,7 +1,12 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 const Cryptos = () => {
-  return <div>Cryptos</div>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 };
 
 export default Cryptos;

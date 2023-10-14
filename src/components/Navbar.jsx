@@ -1,14 +1,39 @@
-import React from "react";
-import { TbMenu2 } from "react-icons/tb";
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import "../index.css";
+
 const Navbar = () => {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => {
+    setClick(!click);
+  };
+
   return (
-    <div className="navbar-container">
-      <div className="nav-content">
-        <ul className="nav">
-          <li>Crypto</li>
+    <div className="header">
+      <div className="container">
+        <h1>
+          Crypto<span className="primary">Wave</span>
+        </h1>
+        <div className="hamberger" onClick={handleClick}>
+          {click ? (
+            <FaTimes size={34} style={{ color: "#40a798" }} />
+          ) : (
+            <FaBars size={34} style={{ color: "#40a798" }} />
+          )}
+        </div>
+        <ul className={click ? "nav-menu show" : "nav-menu"}>
           <li>
-            {" "}
-            <TbMenu2 />
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/Trending">Trending</a>
+          </li>
+          <li>
+            <a href="/Cryptos">Cryptos</a>
+          </li>
+          <li>
+            <a href="/Exchanges">Exchanges</a>
           </li>
         </ul>
       </div>
