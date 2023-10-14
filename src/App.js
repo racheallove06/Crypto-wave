@@ -5,7 +5,7 @@ import List from "./pages/List";
 import Home from "./pages/Home";
 import Trending from "./pages/Trending";
 import Exchanges from "./pages/Exchanges";
-import Cryptos from "./pages/Cryptos";
+import PriceTracking from "./pages/PriceTracking";
 import Navbar from "./components/Navbar";
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/:id" element={<List />} />
           <Route path="/Trending" element={<Trending />} />
           <Route path="/Exchanges" element={<Exchanges />} />
-          <Route path="/Cryptos" element={<Cryptos />} />
+          <Route path="/Cryptos" element={<PriceTracking />} />
         </Routes>
       </SideBar>
     </div>

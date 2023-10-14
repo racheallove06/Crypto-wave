@@ -67,12 +67,10 @@ const List = () => {
     <div>
       <Navbar />
       <header className="list-header">
-        <img src={store.displayImage} alt="/" width="64" />
-        <h2>
-          {store.displayData} ({store.displaySymb} )
-        </h2>
+        <img src={store.displayImage} alt="" width="64" />
+        <h2>{store.displayData}</h2>
       </header>
-      <div className="list-graph">
+      <div className="list-graph width">
         {" "}
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart

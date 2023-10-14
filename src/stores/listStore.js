@@ -7,7 +7,8 @@ const listStore = create((set) => ({
   graphData: [],
   displayData: [],
   displayImage: [],
-  displaySymb: [],
+  displayDes: [],
+
   fetchData: debounce(async (id) => {
     const [graphRes, dataRes] = await Promise.all([
       axios.get(
@@ -30,11 +31,12 @@ const listStore = create((set) => ({
 
     const displayData = dataRes.data.name;
     const displayImage = dataRes.data.image.large;
-    const displaySymb = dataRes.data.symbol;
+    const displayDes = dataRes.data.description;
+    console.log(displayDes);
     set({ graphData });
     set({ displayData });
     set({ displayImage });
-    set({ displaySymb });
+    set({ displayDes });
   }, 500),
 }));
 

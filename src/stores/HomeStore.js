@@ -9,6 +9,9 @@ const HomeStore = create((set) => ({
   //created another state to rebert back to the trending coins
   tending: [],
   //function to update the state
+
+  //new state
+  searching: false,
   setQuery: (e) => {
     set({ query: e.target.value });
     HomeStore.getState().searchCoins();
@@ -17,6 +20,7 @@ const HomeStore = create((set) => ({
   //function to get the coins entered in the input from the api
 
   searchCoins: debounce(async () => {
+    set({ searching: true });
     const { query, trending } = HomeStore.getState();
     if (query.length > 2) {
       const coins = await axios.get(
@@ -32,9 +36,9 @@ const HomeStore = create((set) => ({
         };
       });
       ///set our fetched coinds
-      set({ fetchedCoins: fetchedCoins });
+      set({ fetchedCoins: fetchedCoins, searching: false });
     } else {
-      set({ fetchedCoins: trending });
+      set({ fetchedCoins: trending, searching: false });
     }
   }, 500),
 

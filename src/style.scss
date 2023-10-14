@@ -6,6 +6,32 @@
   }
 }
 
+@keyframes rotating {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.home-search-input {
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 28px;
+    right: -50px;
+    transform: translateY(-50%);
+    animation: 2s rotating infinite linear;
+    opacity: 0;
+    transition: 0.2s opacity;
+  }
+  &.searching svg {
+    opacity: 1;
+  }
+}
+
 .width {
   position: relative;
   max-width: 600px;
