@@ -63,7 +63,7 @@ const listStore = create((set) => ({
     });
 
     const extractedData = extractDataFromResponse(dataRes);
-    console.log(dataRes);
+    //console.log(dataRes);
     set({ graphData, ...extractedData });
   }, 500),
 }));

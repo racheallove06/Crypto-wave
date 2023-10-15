@@ -165,13 +165,17 @@ main {
 }
 
 .nav-menu.show {
-  display: flex;
+  display: none;
   right: 0;
 }
 
 .nav-menu li {
   padding: 1rem;
   width: 100%;
+}
+
+.header .container .hamberger {
+  display: none;
 }
 
 .nav-menu li a {
@@ -264,8 +268,9 @@ main {
   height: 200px;
   border-radius: 24px;
   border: 1px solid #40a798;
-  box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px;
+  /*box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px;*/
   text-align: center;
+  background-color: #f1f1f1;
 }
 
 .featured .right .card:hover {

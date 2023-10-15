@@ -53,7 +53,7 @@ input[type="text"] {
 
 @media (max-width: 450px) {
   input[type="text"] {
-    width: 50%;
+    width: 80%;
     align-items: center;
   }
 }
@@ -147,11 +147,27 @@ img {
 }
 
 .data {
-  ul {
-    list-style: none;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #40a798;
   }
   p {
     color: #476268;
     font-size: 18px;
+  }
+  h2 {
+    font-size: 26px;
+    margin-top: 10px;
+    color: #476268;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h4 {
+    font-size: 16px;
   }
 }
