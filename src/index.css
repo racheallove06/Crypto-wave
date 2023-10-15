@@ -129,12 +129,14 @@ main {
 /*nabvbar */
 .header {
   width: 100%;
-  height: 10vh;
+  height: 16vh;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
-  left: 100;
+  left: 0;
+  right: 0;
   z-index: 10;
+  background-color: #f1f1f1;
 }
 
 .header .container {
@@ -155,10 +157,10 @@ main {
   top: 52px;
   height: 100vh;
   display: none;
-  width: 50%;
+  width: 10vh;
   transition: 0.2s;
   z-index: 2;
-  background-color: aliceblue;
+  background-color: #f1f1f1;
   border-left: 1px solid black;
 }
 
@@ -215,7 +217,7 @@ main {
   width: 100%;
   padding: 8rem 0;
   background-color: var(--background);
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%);
+  /*clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%);*/
 }
 
 .featured .container {
@@ -230,11 +232,16 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 2rem;
+  padding-bottom: 31.7rem;
+}
+
+.featured .left h2 {
+  color: #476268;
 }
 
 .featured .left p {
-  margin: 1.5rem 0;
+  padding-bottom: 50px;
+  color: #476268;
 }
 
 .featured .left .btn {
@@ -245,6 +252,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding-bottom: 6.9rem;
 }
 
 .featured .right .card {
@@ -252,10 +260,10 @@ main {
   flex-direction: column;
   padding: 12px 22px;
   margin: 0.4rem;
-  width: 190px;
-  height: 190px;
+  width: 195px;
+  height: 200px;
   border-radius: 24px;
-  border: 1px solid #d3d3d3;
+  border: 1px solid #40a798;
   box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px;
   text-align: center;
 }
@@ -273,6 +281,10 @@ main {
   width: 50px;
   margin: auto;
   padding: 0.2rem 0;
+}
+
+.featured .right .price h5 {
+  color: #476268;
 }
 
 .featured .icon {
@@ -295,8 +307,9 @@ main {
   color: #ff0000;
 }
 
-.price {
+.right .card .top.price {
   margin-bottom: 50px;
+  color: #476268;
 }
 
 /*Sign-up Page*/
@@ -437,22 +450,11 @@ main {
   }
 }
 
-@media screen and (max-width: 450px) {
-  .sidebar {
-    position: absolute;
-    flex-direction: column;
-    justify-content: start;
-    top: 0px;
+@media screen and (max-width: 375px) {
+  .header .container {
+    height: 100%;
     width: 50%;
-    left: -100%;
-    height: 200vh;
-    transition: 0.4s;
-    z-index: 2;
-    border-left: 1px solid #40a798;
-  }
-  .link-text {
-    transition: all 0.5s;
-    width: 100%;
-    margin-left: -10px;
+    padding: 0;
+    margin: 0;
   }
 }

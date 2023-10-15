@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FcCurrencyExchange } from "react-icons/fc";
 import { FaBars } from "react-icons/fa6";
-import logo from "./cryptocurrency.png";
+import logo from "../assets/Crypto.png";
 import "../index.css";
 import { NavLink } from "react-router-dom";
 import { useStateContext } from "../contexts/ContextProvider";

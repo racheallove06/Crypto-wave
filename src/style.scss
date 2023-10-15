@@ -1,6 +1,7 @@
 .home-search {
   padding: 10px 0;
   text-align: center;
+
   h2 {
     color: #476268;
   }
@@ -48,6 +49,13 @@ input[type="text"] {
   display: block;
   width: 100%;
   border-radius: 0;
+}
+
+@media (max-width: 450px) {
+  input[type="text"] {
+    width: 50%;
+    align-items: center;
+  }
 }
 
 input {
@@ -102,6 +110,7 @@ img {
 
 .home-usd {
   font-size: 14px;
+  color: #40a798;
 }
 
 .home-btc {
@@ -128,10 +137,21 @@ img {
   h2 {
     font-size: 32px;
     margin-top: 10px;
+    color: #476268;
   }
 }
 
 .list-graph {
   height: 200px;
   width: 100%;
+}
+
+.data {
+  ul {
+    list-style: none;
+  }
+  p {
+    color: #476268;
+    font-size: 18px;
+  }
 }

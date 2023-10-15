@@ -1,5 +1,7 @@
 import React from "react";
 import listStore from "../stores/listStore";
+import "../style.scss";
+
 import { useParams } from "react-router-dom";
 import {
   AreaChart,
@@ -67,8 +69,7 @@ const List = () => {
     <div>
       <Navbar />
       <header className="list-header">
-        <img src={store.displayImage} alt="" width="64" />
-        <h2>{store.displayData}</h2>
+        <img src={store.displayImage} /> <h2>{store.displayData}</h2>
       </header>
       <div className="list-graph width">
         {" "}
@@ -94,6 +95,50 @@ const List = () => {
             />
           </AreaChart>
         </ResponsiveContainer>{" "}
+      </div>
+      <div className="data width">
+        <h2> Details</h2>
+        <div>
+          <h4>Community Score</h4>
+          <span> {store.communityscore}</span>
+        </div>{" "}
+        <div>
+          <h4>Liquidity Score</h4>
+          <span> {store.liquidityscore}</span>
+        </div>{" "}
+        <div>
+          <h4>Market Cup Rank</h4>
+          <span> {store.marketrank}</span>
+        </div>{" "}
+        <div>
+          <h4>WatchList Users</h4>
+          <span> {store.watchlist}</span>
+        </div>{" "}
+        <div>
+          <h4>Market Change</h4>
+          <span> {store.marketchange}</span>
+        </div>{" "}
+        <div>
+          <h4>Price Change in 24hrs</h4>
+          <span> {store.pricechange}</span>
+        </div>
+        <div>
+          <h4>Market Change in 7 days </h4>
+          <span> {store.pricechangeweek}</span>
+        </div>
+        <div>
+          <h4>Market Change in 14 days </h4>
+          <span> {store.price14}</span>
+        </div>
+        <div>
+          <h4>Market Change in 1 year</h4>
+          <span> {store.pricechangeyear}</span>
+        </div>
+        <div>
+          <h4>Public Score </h4>
+          <span> {store.publicscore}</span>
+        </div>
+        <p>{store.displayDes.en}</p>
       </div>
     </div>
   );

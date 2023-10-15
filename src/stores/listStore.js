@@ -2,6 +2,39 @@ import { create } from "zustand";
 import axios from "axios";
 import { debounce } from "../handlingEvent/Debounce";
 
+const extractDataFromResponse = (dataRes) => {
+  const displayData = dataRes.data.name;
+  const displayImage = dataRes.data.image.large;
+  const displayDes = dataRes.data.description;
+  const communityscore = dataRes.data.community_score;
+  const liquidityscore = dataRes.data.liquidity_score;
+  const marketrank = dataRes.data.market_cap_rank;
+  const watchlist = dataRes.data.watchlist_portfolio_users;
+
+  const marketchange =
+    dataRes.data.market_data.market_cap_change_percentage_24h;
+  const pricechange = dataRes.data.market_data.price_change_24h;
+  const pricechangeyear = dataRes.data.market_data.price_change_percentage_1y;
+  const pricechangeweek = dataRes.data.market_data.price_change_percentage_7d;
+  const price14 = dataRes.data.market_data.price_change_percentage_14d;
+  const publicscore = dataRes.data.public_interest_score;
+  return {
+    displayData,
+    displayImage,
+    displayDes,
+    communityscore,
+    liquidityscore,
+    marketrank,
+    watchlist,
+    marketchange,
+    pricechange,
+    pricechangeyear,
+    pricechangeweek,
+    price14,
+    publicscore,
+  };
+};
+
 const listStore = create((set) => ({
   //state for handling the data
   graphData: [],
@@ -29,14 +62,9 @@ const listStore = create((set) => ({
       };
     });
 
-    const displayData = dataRes.data.name;
-    const displayImage = dataRes.data.image.large;
-    const displayDes = dataRes.data.description;
-    console.log(displayDes);
-    set({ graphData });
-    set({ displayData });
-    set({ displayImage });
-    set({ displayDes });
+    const extractedData = extractDataFromResponse(dataRes);
+    console.log(dataRes);
+    set({ graphData, ...extractedData });
   }, 500),
 }));
 

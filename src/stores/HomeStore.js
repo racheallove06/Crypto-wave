@@ -13,14 +13,15 @@ const HomeStore = create((set) => ({
   //new state
   searching: false,
   setQuery: (e) => {
+    //takes an event object as an argument and updates the query state with the value entered in the input field
     set({ query: e.target.value });
-    HomeStore.getState().searchCoins();
+    HomeStore.getState().searchCoins(); //it triggers the searchCoins function
   },
 
   //function to get the coins entered in the input from the api
 
   searchCoins: debounce(async () => {
-    set({ searching: true });
+    set({ searching: true }); //It sets the searching flag to true to indicate that a search is in progress
     const { query, trending } = HomeStore.getState();
     if (query.length > 2) {
       const coins = await axios.get(
@@ -45,6 +46,7 @@ const HomeStore = create((set) => ({
   ///created a function to only get the data i want from the query
 
   fetchCoins: async () => {
+    // trending coins and Bitcoin prices
     const [coins, btcRes] = await Promise.all([
       axios.get("https://api.coingecko.com/api/v3/search/trending"),
       axios.get(

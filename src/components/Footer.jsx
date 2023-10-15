@@ -1,14 +1,13 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import logo from "../assets/Crypto.png";
 const Footer = () => {
   return (
     <div>
       <div className="footer">
         <div className="container">
           <div className="col col-1">
-            <h1>
-              De<span className="primary">Fi</span>
-            </h1>
+            <img src={logo} alt="" width="84" />
           </div>
           <div className="col">
             <h5>Support</h5>

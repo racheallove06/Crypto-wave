@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../index.css";
-
+import logo from "../assets/Crypto.png";
 const Navbar = () => {
   const [click, setClick] = useState(false);
 
@@ -12,9 +12,7 @@ const Navbar = () => {
   return (
     <div className="header">
       <div className="container">
-        <h1>
-          Crypto<span className="primary">Wave</span>
-        </h1>
+        <img src={logo} alt="" width="84" />
         <div className="hamberger" onClick={handleClick}>
           {click ? (
             <FaTimes size={34} style={{ color: "#40a798" }} />

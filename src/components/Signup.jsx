@@ -1,5 +1,5 @@
 import React from "react";
-import image from "./image.jpeg";
+import image from "../assets/image.jpeg";
 const Signup = () => {
   return (
     <div className="signup">
