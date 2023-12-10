@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-///craeting a new context
+///craeting a new context                 
 const StateContext = createContext();
 const initialState = {                         
   chat: false,
